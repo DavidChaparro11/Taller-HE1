@@ -15,6 +15,18 @@ datos_preliminares <- import("he1-taller-datos-apreliminar.dta")
 
 
 
+##punto 6
+reg_2 <- lm(falto ~ uso + edad, data= datos_preliminares)
+stargazer(reg_2, 
+          type= "html",
+          dep.var.labels = c("inasistencia durante menstruacion"),
+          covariate.labels = c("productos sanitarios", "edad"),
+          out = "punto 1.6.docx"
+          )
+
+
+
+
 
 
 
