@@ -2,7 +2,7 @@
 install.packages("pacman")
 require(pacman)
 p_load(rio, skimr, stargazer, tidyverse)
-
+datos_preliminares <- import("he1-taller-datos-apreliminar.dta")
 
 
 
