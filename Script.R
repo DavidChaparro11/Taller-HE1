@@ -8,6 +8,11 @@ datos_preliminares <- import("he1-taller-datos-apreliminar.dta")
 
 
 ## Punto 3 ##
+reg_1 = lm(falto~uso, data=datos_preliminares)
+summary (reg_1)
+stargazer(reg_1,  type="html", dep.var.labels = c("Niñas que faltaron a clase por lo menos uno de sus periodos menstruales"), 
+          covariate.labels = c("Niñas que usan productos sanitarios durante su periodo menstrual"),
+          out="punto.doc")
 
 
 
@@ -20,12 +25,3 @@ datos_preliminares <- import("he1-taller-datos-apreliminar.dta")
 
 
 
-
-
-
-
-
-## Fin Punto 3##
-=======
-data_preliminar <- import("he1-taller-datos-apreliminar.dta")
->>>>>>> 52e76c1c391d9d40a77dfdbcb55dee2b0491d4e4
