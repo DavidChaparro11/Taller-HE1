@@ -28,7 +28,25 @@ stargazer(reg_2,
           )
 
 
+##punto 7
+reg_3 <- lm(falto ~ uso + edad+ ingreso, data = Base2)
+stargazer(reg_1, reg_2, reg_3,
+          type= "html",
+          dep.var.labels = c("inasistencia durante menstruacion"),
+          covariate.labels = c("productos sanitarios", "edad" , "Ingreso"),
+          out = "punto 1.7.doc"
+)
 
+
+##Parte experimental
+base_survey <- import("he1-taller-datos-baselinesurvey.dta")
+sum_tratamiento <- summary(base_survey$tratamiento)
+stargazer(sum_tratamiento)
+base_survey %>% count(tratamiento == 1)
+
+cuenta<-base_survey %>% group_by(tratamiento) %>% summarize(edumadre=mean(edumadre,na.rm=T),
+                                                            n=n())
+stargazer(data.frame(cuenta),summary=FALSE,type="text")
 
 
 
