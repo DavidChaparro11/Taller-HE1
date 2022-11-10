@@ -44,8 +44,8 @@ sum_tratamiento <- summary(base_survey$tratamiento)
 stargazer(sum_tratamiento)
 base_survey %>% count(tratamiento == 1)
 
-cuenta<-base_survey %>% group_by(tratamiento) %>% summarize(edumadre=mean(edumadre,na.rm=T),
-                                                            n=n())
+cuenta<-base_survey %>% group_by(tratamiento) %>% summarize(edumadre=mean(edad,na.rm=T), 
+                                                            n=n()) 
 stargazer(data.frame(cuenta),summary=FALSE,type="text")
 
 
