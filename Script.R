@@ -40,16 +40,24 @@ stargazer(reg_1, reg_2, reg_3,
 
 ##Parte experimental
 base_survey <- import("he1-taller-datos-baselinesurvey.dta")
-sum_tratamiento <- summary(base_survey$tratamiento)
+ sum_tratamiento <- summary(base_survey$tratamiento)
 stargazer(sum_tratamiento)
 base_survey %>% count(tratamiento == 1)
 
-cuenta<-base_survey %>% group_by(tratamiento) %>% summarize(edumadre=mean(edad,na.rm=T), 
-                                                            n=n()) 
+cuenta<-base_survey %>% group_by(tratamiento) %>% summarize(edumadre=mean(edumadre,na.rm=T), 
+                                                            n=n(),) 
 stargazer(data.frame(cuenta),summary=FALSE,type="text")
 
 
 
+cuenta2<-base_survey %>% group_by(tratamiento) %>% summarize(edumadre=mean(edumadre,na.rm=T),
+                                                             edupadre=mean(edupadre,na.rm=T),
+                                                             ingreso=mean(ingreso,na.rm=T),
+                                                             edad=mean(edad,na.rm=T),
+                                                             hindu_padre=mean(hindu_padre, na.rm=T),
+                                                            n=n(),) 
 
-
-
+stargazer(data.frame(cuenta2),summary=FALSE,type="text")
+eduamdre <- base_survey %>% group_by(tratamiento) %>% t.test()
+base_survey_2
+t.test()
