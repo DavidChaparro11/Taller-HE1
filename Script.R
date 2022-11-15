@@ -16,7 +16,14 @@ stargazer(reg_1,  type="html", dep.var.labels = c("Niñas que faltaron a clase p
 
 
 
+##3.2
+muestra_3.2.5 <- subset(he1_taller_datos_experimento, periodo >=1, despues>=1 )
+reg_325 <- lm(asistencia ~ tratamiento, data=muestra_3.2.5)
+summary(reg_3.2.5)
 
+stargazer(reg_3.2.5, type="html", out ="punto325")
+
+stargazer(reg_3.2.5)
 
 ##punto 6
 reg_2 <- lm(falto ~ uso + edad, data= Base2)
